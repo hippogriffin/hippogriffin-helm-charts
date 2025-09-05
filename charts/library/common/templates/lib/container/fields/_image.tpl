@@ -8,8 +8,13 @@ Image used by the container.
 
   {{- $imageRepo := $containerObject.image.repository -}}
   {{- $imageTag := $containerObject.image.tag -}}
+  {{- $imageDigest := $containerObject.image.digest -}}
 
-  {{- if and $imageRepo $imageTag -}}
+  {{- if and $imageRepo $imageDigest -}}
+    {{- printf "%s@%s" $imageRepo $imageDigest -}}
+  {{- else if and $imageRepo $imageTag -}}
     {{- printf "%s:%s" $imageRepo $imageTag -}}
+  {{- else if and $imageRepo $imageTag $imageDigest -}}
+    {{- printf "%s@%s" $imageRepo $imageDigest -}}
   {{- end -}}
 {{- end -}}
