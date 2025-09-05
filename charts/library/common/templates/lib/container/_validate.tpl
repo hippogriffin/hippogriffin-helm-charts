@@ -16,7 +16,7 @@ Validate container values
 
   {{- if empty (dig "image" "tag" nil $containerObject) -}}
       {{- if empty (dig "image" "digest" nil $containerObject) -}}
-        {{- fail (printf "No image tag specified for container. (controller %s, container %s)" $controllerObject.identifier $containerObject.identifier) }}
+        {{- fail (printf "No image tag or digest specified for container. (controller %s, container %s)" $controllerObject.identifier $containerObject.identifier) }}
       {{- end -}}
   {{- end -}}
 {{- end -}}
