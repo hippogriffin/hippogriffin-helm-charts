@@ -15,6 +15,6 @@ Image used by the container.
   {{- else if and $imageRepo $imageTag -}}
     {{- printf "%s:%s" $imageRepo $imageTag -}}
   {{- else if and $imageRepo $imageTag $imageDigest -}}
-    {{- printf "%s@%s" $imageRepo $imageDigest -}}
+    {{- printf "%s:%s@%s" $imageRepo $imageTag $imageDigest -}}
   {{- end -}}
 {{- end -}}
