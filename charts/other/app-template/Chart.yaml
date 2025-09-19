@@ -17,7 +17,7 @@ annotations:
   artifacthub.io/changes: |-
     - kind: changed
       description: |-
-        Upgraded the common library to v4.2.1
+        Upgraded the common library to v4.3.1
       links:
         - name: Upgrade notes
           url: https://bjw-s-labs.github.io/helm-charts/docs/app-template/upgrade-instructions/
